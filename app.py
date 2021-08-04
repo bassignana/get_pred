@@ -18,7 +18,7 @@ def get_pickle():
     train.training()
     return 'training'
 
-@ml_api.route('/predict_svc', methods=["GET"])
+@ml_api.route('/predict_svc', methods=["POST"])
 def predict_svc():
     
     with open('model_svc.pkl', 'rb') as model_svc_pkl:
@@ -34,7 +34,7 @@ def predict_svc():
     return str(prediction)
 
 
-@ml_api.route('/predict_rfc', methods=["GET"])
+@ml_api.route('/predict_rfc', methods=["POST"])
 def predict_rfc():
     
     with open('model_rfc.pkl', 'rb') as model_rfc_pkl:
