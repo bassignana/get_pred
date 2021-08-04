@@ -1,0 +1,23 @@
+{
+  "pid" : 1,
+  "start" : "2021-12-24 23:11:44",
+  "end" : "2021-12-24 23:11",
+  "quality" : 5,
+  "comment" : "user comment"
+}
+
+{
+    "pid" : 1,
+    "start" : "2021-12-24",
+    "carbs" : 5,
+    "proteins" : 5,
+    "fats" : 5,
+    "comment" : "user comment"
+}
+
+{
+    "pid" : 1,
+    "timestamp" : "2021-12-24 23:11:44",
+    "value" : 100,
+    "comment" : "user comment"
+  }
