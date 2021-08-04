@@ -24,10 +24,13 @@ def predict_svc():
     with open('model_svc.pkl', 'rb') as model_svc_pkl:
         model_svc = pickle.load(model_svc_pkl)
     
-    sepal_length = request.args.get("sepal_length")
-    sepal_width = request.args.get("sepal_width")
-    petal_length = request.args.get("petal_length")
-    petal_width = request.args.get("petal_width")
+    
+    json_data = request.get_json()
+
+    sepal_length = json_data["sepal_length"]
+    sepal_width = json_data["sepal_width"]
+    petal_length = json_data["petal_length"]
+    petal_width = json_data["petal_width"]
 
     input_data = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
     prediction = model_svc.predict(input_data)
@@ -40,11 +43,14 @@ def predict_rfc():
     with open('model_rfc.pkl', 'rb') as model_rfc_pkl:
         model_rfc = pickle.load(model_rfc_pkl)
     
-    sepal_length = request.args.get("sepal_length")
-    sepal_width = request.args.get("sepal_width")
-    petal_length = request.args.get("petal_length")
-    petal_width = request.args.get("petal_width")
+    
+    json_data = request.get_json()
 
+    sepal_length = json_data["sepal_length"]
+    sepal_width = json_data["sepal_width"]
+    petal_length = json_data["petal_length"]
+    petal_width = json_data["petal_width"]
+    
     input_data = np.array([[sepal_length, sepal_width, petal_length, petal_width]])
     prediction = model_rfc.predict(input_data)
     return str(prediction)
