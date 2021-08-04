@@ -7,6 +7,11 @@ import train
 #pickle and unpickle must happen with the same version of scikit learn
 
 ml_api = Flask(__name__)
+ml_api.config["DEBUG"] = True
+
+@ml_api.route('/')
+def hello_world():
+    return 'Hello, World!'
 
 @ml_api.route('/train', methods=["GET"])
 def get_pickle():
