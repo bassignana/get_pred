@@ -39,3 +39,6 @@ def training():
 
     with open('model_rfc.pkl','wb') as model_rfc_pickle:
         pickle.dump(model_rfc, model_rfc_pickle)
+ 
+if __name__ == '__main__':
+    training()
