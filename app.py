@@ -9,6 +9,7 @@ import train
 ml_api = Flask(__name__)
 ml_api.config["DEBUG"] = True
 
+# una route vera, che non sia una richiesta api, ci va se no il deploy va in errore
 @ml_api.route('/')
 def hello_world():
     return 'Hello, World!'
@@ -21,11 +22,11 @@ def get_pickle():
 @ml_api.route('/predict_svc', methods=["POST"])
 def predict_svc():
     
-    with open('model_svc.pkl', 'rb') as model_svc_pkl:
+    with open('model_svc.pkl', 'rb') as model_svc_pkl:#attenzione a non lasciare fuori dalle funzioni nulla se no i comandi vengono eseguiti
         model_svc = pickle.load(model_svc_pkl)
     
     
-    json_data = request.get_json()
+    json_data = request.get_json()# assicurarsi sempre che la modialià e il formato dei dati in invio sia conforme alla modalità e formato di ricezione
 
     sepal_length = json_data["sepal_length"]
     sepal_width = json_data["sepal_width"]
