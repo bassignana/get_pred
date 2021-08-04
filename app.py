@@ -60,7 +60,7 @@ def predict_rfc():
     return str(prediction)
 
 
-@app.route('/tables/insert/sleep', methods=['POST'])
+@ml_api.route('/tables/insert/sleep', methods=['POST'])
 def ins_tb_sleep():
     json_data = request.get_json()
 
@@ -73,7 +73,7 @@ def ins_tb_sleep():
     ut.insertIntoSLEEP(pid ,start ,end,quality,comment)
     return jsonify('finished_sleep')
 
-@app.route('/tables/insert/meal', methods=['POST'])
+@ml_api.route('/tables/insert/meal', methods=['POST'])
 def ins_tb_meal():
     json_data = request.get_json()
 
@@ -88,7 +88,7 @@ def ins_tb_meal():
     ut.insertIntoFOOD(pid ,start ,end,carbs,proteins, fats,comment)
     return jsonify('finished_meal')
 
-@app.route('/tables/insert/glucose', methods=['POST'])
+@ml_api.route('/tables/insert/glucose', methods=['POST'])
 def ins_tb_glucose():
     json_data = request.get_json()
 
