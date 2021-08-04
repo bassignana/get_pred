@@ -3,8 +3,8 @@ from flask import Flask, request
 import numpy as np
 import pandas as pd
 
-with open('model_svc.pkl', 'rb') as model_svc_pkl:
-    model_svc = pickle.load(model_svc_pkl)
+#pickle and unpickle must happen with the same version of scikit learn
+
 
 with open('model_rfc.pkl', 'rb') as model_rfc_pkl:
     model_rfc = pickle.load(model_rfc_pkl)
@@ -14,6 +14,10 @@ ml_api = Flask(__name__)
 
 @ml_api.route('/predict_svc', methods=["GET"])
 def predict_svc():
+    
+    with open('model_svc.pkl', 'rb') as model_svc_pkl:
+        model_svc = pickle.load(model_svc_pkl)
+    
     sepal_length = request.args.get("sepal_length")
     sepal_width = request.args.get("sepal_width")
     petal_length = request.args.get("petal_length")
@@ -26,6 +30,10 @@ def predict_svc():
 
 @ml_api.route('/predict_rfc', methods=["GET"])
 def predict_rfc():
+    
+    with open('model_rfc.pkl', 'rb') as model_rfc_pkl:
+        model_rfc = pickle.load(model_rfc_pkl)
+    
     sepal_length = request.args.get("sepal_length")
     sepal_width = request.args.get("sepal_width")
     petal_length = request.args.get("petal_length")
