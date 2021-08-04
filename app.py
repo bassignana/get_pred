@@ -6,11 +6,6 @@ import train
 
 #pickle and unpickle must happen with the same version of scikit learn
 
-
-with open('model_rfc.pkl', 'rb') as model_rfc_pkl:
-    model_rfc = pickle.load(model_rfc_pkl)
-
-
 ml_api = Flask(__name__)
 
 @ml_api.route('/train', methods=["GET"])
