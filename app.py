@@ -104,7 +104,7 @@ def ins_tb_glucose():
 def db_create():
     
     conn = sqlite3.connect('main.db')
-    return "Opened or created database successfully
+    return "Opened or created database successfully"
 
 @ml_api.route('/tables/createall', methods=["GET"])
 def tables_create():
@@ -133,6 +133,6 @@ def tables_create():
          COMMENT         VARCHAR(150));
          ''')
     conn.close()
-    return "Table created successfully";
+    return "Table created successfully"
 
 
