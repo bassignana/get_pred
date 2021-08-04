@@ -2,6 +2,7 @@ import pickle
 from flask import Flask, request
 import numpy as np
 import pandas as pd
+import train
 
 #pickle and unpickle must happen with the same version of scikit learn
 
@@ -11,6 +12,10 @@ with open('model_rfc.pkl', 'rb') as model_rfc_pkl:
 
 
 ml_api = Flask(__name__)
+
+@ml_api.route('/train', methods=["GET"])
+def get_pickle():
+    train.training()
 
 @ml_api.route('/predict_svc', methods=["GET"])
 def predict_svc():
