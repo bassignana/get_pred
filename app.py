@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import train
 import api_utils as ut
+import sqlite3
 
 #pickle and unpickle must happen with the same version of scikit learn
 
