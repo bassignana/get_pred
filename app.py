@@ -16,6 +16,7 @@ def hello_world():
 @ml_api.route('/train', methods=["GET"])
 def get_pickle():
     train.training()
+    return 'training'
 
 @ml_api.route('/predict_svc', methods=["GET"])
 def predict_svc():
