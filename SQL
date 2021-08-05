@@ -1,0 +1,39 @@
+SELECT
+        sleep.start as sleep_start,
+        sleep.finish as sleep_end,
+        sleep.quality as quality,
+        meal.start as meal_start,
+        meal.carbs as carbs,
+        meal.proteins as proteins,
+        meal.fats as fats,
+        glucose.period as period,
+        glucose.value as value
+    FROM
+        SLEEP
+        INNER JOIN MEAL ON SLEEP.id = MEAL.id
+        INNER JOIN GLUCOSE ON MEAL.id = GLUCOSE.id where SLEEP.ID = 1
+
+
+INSERT INTO GLUCOSE (ID,PERIOD,VALUE,COMMENT) VALUES (
+  '1',
+  '2021-12-23 23:12:33',
+  '110',
+  'user comm'
+); 
+
+INSERT INTO MEAL (ID,START,CARBS,PROTEINS,FATS,COMMENT) VALUES (
+  '1',
+  '2021-12-24 3:12:33',
+  '30',
+  '12',
+  '25',
+  'comment by user'
+);
+
+INSERT INTO SLEEP (ID,START,FINISH,QUALITY,COMMENT) VALUES (
+  '1',
+  '2021-12-24 4:12:33',
+  '2021-12-24 7:43:33',
+  '2',
+  'comment'
+);

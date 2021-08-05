@@ -97,9 +97,9 @@ def ins_tb_glucose():
     timestamp = json_data["timestamp"]
     value = json_data["value"]
     comment = json_data["comment"]
-    
+    print((pid ,timestamp, value, comment))
     ut.insertIntoGLUCOSE(pid ,timestamp, value, comment)
-    return jsonify('finished_glucose')
+    return jsonify('finished glucose')
 
 
 @ml_api.route('/tables/createall', methods=["GET"])
@@ -137,6 +137,12 @@ def tables_create():
 def predict_script():
     df = pred.create_df_pd(1)
     return df.to_string()
+
+@ml_api.route("/predictdue", methods=['GET'])
+def predict_script2():
+    df = pred.create_df_pd2()
+    return df.to_string()
+    
 
 
 if __name__ == '__main__':

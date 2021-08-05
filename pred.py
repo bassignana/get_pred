@@ -20,11 +20,23 @@ def create_df_pd(pid):
         SLEEP
         INNER JOIN MEAL ON SLEEP.id = MEAL.id
         INNER JOIN GLUCOSE ON MEAL.id = GLUCOSE.id"""
-
     condition = " WHERE SLEEP.ID = " + str(pid) + " ;"
-
+        
     df = pd.read_sql_query(query+condition, con)
+    con.commit()
+    con.close()
+    return df
+
+def create_df_pd2():
+    con = sqlite3.connect("main.db")
+    query = "SELECT * FROM MEAL"    
+    df = pd.read_sql_query(query, con)
+    con.commit()
+    con.close()
     return df
 
 if __name__=='__main__':
-  print("main")
+    create_df_pd()
+    create_df_pd2()
+
+    

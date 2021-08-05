@@ -51,27 +51,32 @@ def insertIntoFOOD(pid ,start ,carbs,proteins, fats,comment):
             
 def insertIntoGLUCOSE(pid ,timestamp, value, comment):
     try:
+        
         sqliteConnection = sqlite3.connect('main.db')
         cur = sqliteConnection.cursor()
-        print("Connected to SQLite")
+        
 
-        sqlite_insert_with_param = """INSERT INTO MEAL
+        sqlite_insert_with_param = """INSERT INTO GLUCOSE
                           (ID ,PERIOD ,VALUE,COMMENT) 
                           VALUES (?, ?, ?, ?);"""
 
         data_tuple = (pid ,timestamp, value, comment)
+        
         cur.execute(sqlite_insert_with_param, data_tuple)
         sqliteConnection.commit()
-        print("insert successful")
+        
 
         cur.close()
 
     except sqlite3.Error as error:
         print("Failed to insert into glucose table", error)
+        
     finally:
         if sqliteConnection:
             sqliteConnection.close()
             print("The SQLite connection is closed")
+         
+    
 
 
 
