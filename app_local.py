@@ -5,6 +5,7 @@ import pandas as pd
 import train
 import api_utils as ut
 import sqlite3
+import pred
 
 #pickle and unpickle must happen with the same version of scikit learn
 
@@ -110,10 +111,10 @@ def tables_create():
     conn.execute('''CREATE TABLE SLEEP
          (ID INTEGER     NOT NULL,
          START           TEXT    NOT NULL,
-         END            TEXT     NOT NULL,
+         FINISH            TEXT     NOT NULL,
          QUALITY        INT,
          COMMENT         VARCHAR(150),
-         PRIMARY KEY ( ID, START, END));''')
+         PRIMARY KEY ( ID, START, FINISH));''')
     conn.execute('''CREATE TABLE MEAL
          (ID INTEGER      NOT NULL,
          START           TEXT    NOT NULL,
@@ -132,6 +133,10 @@ def tables_create():
     conn.close()
     return "Table created successfully"
 
+@ml_api.route("/predict", methods=['GET'])
+def predict_script():
+    df = pred.create_df_pd(1)
+    return df.to_string()
 
 
 if __name__ == '__main__':
