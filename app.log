@@ -89,3 +89,171 @@ INFO - 2021-08-06 08:21:26,178 - _internal.py - _log -  * Detected change in '/U
 INFO - 2021-08-06 08:21:27,360 - app_local.py - <module> - main app started
 WARNING - 2021-08-06 08:21:27,366 - _internal.py - _log -  * Debugger is active!
 INFO - 2021-08-06 08:21:27,378 - _internal.py - _log -  * Debugger PIN: 519-912-749
+INFO - 2021-08-06 09:14:02,045 - app_local.py - <module> - main app started
+INFO - 2021-08-06 09:14:02,083 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 09:14:04,403 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 09:14:04,418 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 09:14:04,418 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 09:14:04,434 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-06 09:16:12,396 - app_local.py - <module> - main app started
+INFO - 2021-08-06 09:16:12,428 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 09:16:14,621 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 09:16:14,636 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 09:16:14,636 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 09:16:14,652 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-06 09:17:22,672 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:17:22] "[37mGET / HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:17:22,715 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:17:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO - 2021-08-06 09:20:46,265 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:20:46] "[37mGET /select/glucose HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:24:49,012 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:24:49] "[37mGET /select/glucose HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:25:59,220 - api_utils.py - insertIntoGLUCOSE - Connected to SQLite
+INFO - 2021-08-06 09:25:59,225 - api_utils.py - insertIntoGLUCOSE - Insert successful
+INFO - 2021-08-06 09:25:59,225 - api_utils.py - insertIntoGLUCOSE - The SQLite connection is closed
+INFO - 2021-08-06 09:25:59,226 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:25:59] "[37mPOST /tables/insert/glucose HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:26:07,883 - api_utils.py - insertIntoFOOD - Connected to SQLite
+ERROR - 2021-08-06 09:26:07,883 - api_utils.py - insertIntoFOOD - Failed to insert into meal table
+Traceback (most recent call last):
+  File "C:\Users\tobg\OneDrive - GFT Technologies SE\Desktop\PY\get_pred\api_utils.py", line 45, in insertIntoFOOD
+    cur.execute(sqlite_insert_with_param, data_tuple)
+sqlite3.IntegrityError: UNIQUE constraint failed: MEAL.ID, MEAL.START
+INFO - 2021-08-06 09:26:07,884 - api_utils.py - insertIntoFOOD - The SQLite connection is closed
+INFO - 2021-08-06 09:26:07,884 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:26:07] "[37mPOST /tables/insert/meal HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:26:10,674 - api_utils.py - insertIntoSLEEP - Connected to SQLite
+INFO - 2021-08-06 09:26:10,694 - api_utils.py - insertIntoSLEEP - The SQLite connection is closed
+INFO - 2021-08-06 09:26:10,695 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:26:10] "[37mPOST /tables/insert/sleep HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:27:20,906 - _internal.py - _log -  * Detected change in 'C:\\Users\\tobg\\OneDrive - GFT Technologies SE\\Desktop\\PY\\get_pred\\api_utils.py', reloading
+INFO - 2021-08-06 09:27:21,039 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 09:27:23,778 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 09:27:23,795 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 09:27:23,801 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 09:27:23,812 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-06 09:29:20,562 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:29:20] "[33mGET /select/meal HTTP/1.1[0m" 404 -
+INFO - 2021-08-06 09:30:30,204 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:30:30] "[35m[1mGET /select/glucose HTTP/1.1[0m" 500 -
+INFO - 2021-08-06 09:30:30,219 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:30:30] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:30:30,224 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:30:30] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:30:30,225 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:30:30] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:30:30,294 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:30:30] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:30:30,310 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:30:30] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:30:30,327 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:30:30] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:32:35,836 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:32:35] "[35m[1mGET /select/glucose HTTP/1.1[0m" 500 -
+INFO - 2021-08-06 09:32:35,850 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:32:35] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:32:35,855 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:32:35] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:32:35,856 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:32:35] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:32:35,891 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:32:35] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:32:35,894 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:32:35] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:32:35,908 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:32:35] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:32:42,970 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:32:42] "[33mGET /select/meal HTTP/1.1[0m" 404 -
+INFO - 2021-08-06 09:32:56,258 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:32:56] "[33mGET /select/sleep HTTP/1.1[0m" 404 -
+INFO - 2021-08-06 09:34:57,278 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:34:57] "[37mGET / HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:36:37,856 - app_local.py - <module> - main app started
+INFO - 2021-08-06 09:36:37,885 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 09:36:40,173 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 09:36:40,188 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 09:36:40,194 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 09:36:40,206 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-06 09:38:52,672 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:38:52] "[35m[1mGET /select/glucose HTTP/1.1[0m" 500 -
+INFO - 2021-08-06 09:38:52,689 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:38:52] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:38:52,694 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:38:52] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:38:52,695 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:38:52] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:38:52,738 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:38:52] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:38:52,743 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:38:52] "[37mGET /select/glucose?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:40:27,963 - _internal.py - _log -  * Detected change in 'C:\\Users\\tobg\\OneDrive - GFT Technologies SE\\Desktop\\PY\\get_pred\\app_local.py', reloading
+INFO - 2021-08-06 09:40:28,085 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 09:40:30,729 - app_local.py - <module> - main app started
+INFO - 2021-08-06 09:41:01,213 - app_local.py - <module> - main app started
+INFO - 2021-08-06 09:42:21,134 - app_local.py - <module> - main app started
+INFO - 2021-08-06 09:42:21,166 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 09:42:23,478 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 09:42:23,494 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 09:42:23,499 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 09:42:23,511 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-06 09:42:28,697 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:42:28] "[37mGET /select/glucose HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:44:11,137 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:44:11] "[37mGET /select/meal HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:44:18,806 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:44:18] "[37mGET /select/sleep HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:44:30,527 - api_utils.py - insertIntoSLEEP - Connected to SQLite
+INFO - 2021-08-06 09:44:30,532 - api_utils.py - insertIntoSLEEP - insert successful
+INFO - 2021-08-06 09:44:30,533 - api_utils.py - insertIntoSLEEP - The SQLite connection is closed
+INFO - 2021-08-06 09:44:30,533 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:44:30] "[37mPOST /tables/insert/sleep HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:44:40,276 - api_utils.py - insertIntoFOOD - Connected to SQLite
+INFO - 2021-08-06 09:44:40,281 - api_utils.py - insertIntoFOOD - insert successful
+INFO - 2021-08-06 09:44:40,282 - api_utils.py - insertIntoFOOD - The SQLite connection is closed
+INFO - 2021-08-06 09:44:40,282 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:44:40] "[37mPOST /tables/insert/meal HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:47:20,559 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:47:20] "[37mGET /select/sleep HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:47:25,825 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:47:25] "[37mGET /select/meal HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 09:49:40,723 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:49:40] "[33mGET /select/predict HTTP/1.1[0m" 404 -
+INFO - 2021-08-06 09:50:10,053 - _internal.py - _log -  * Detected change in 'C:\\Users\\tobg\\OneDrive - GFT Technologies SE\\Desktop\\PY\\get_pred\\pred.py', reloading
+INFO - 2021-08-06 09:50:10,173 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 09:50:12,574 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 09:50:12,590 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 09:50:12,595 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 09:50:12,608 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-06 09:50:33,245 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:50:33] "[33mGET /select/predict HTTP/1.1[0m" 404 -
+INFO - 2021-08-06 09:51:57,961 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 09:51:57] "[37mGET /predict HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 10:02:28,056 - _internal.py - _log -  * Detected change in 'C:\\Users\\tobg\\OneDrive - GFT Technologies SE\\Desktop\\PY\\get_pred\\app_local.py', reloading
+INFO - 2021-08-06 10:02:28,164 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 10:02:30,708 - app_local.py - <module> - main app started
+INFO - 2021-08-06 10:03:52,089 - app_local.py - <module> - main app started
+INFO - 2021-08-06 10:04:46,958 - app_local.py - <module> - main app started
+INFO - 2021-08-06 10:04:47,002 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 10:04:49,308 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 10:04:49,323 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 10:04:49,329 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 10:04:49,336 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-06 10:04:50,003 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 10:04:50] "[37mGET / HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 10:04:55,410 - api_utils.py - insertIntoSLEEP - Connected to SQLite
+INFO - 2021-08-06 10:04:55,435 - api_utils.py - insertIntoSLEEP - The SQLite connection is closed
+INFO - 2021-08-06 10:04:55,441 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 10:04:55] "[37mPOST /tables/insert/sleep/predict HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 10:06:32,757 - api_utils.py - insertIntoSLEEP - Connected to SQLite
+INFO - 2021-08-06 10:06:32,762 - api_utils.py - insertIntoSLEEP - insert successful
+INFO - 2021-08-06 10:06:32,762 - api_utils.py - insertIntoSLEEP - The SQLite connection is closed
+INFO - 2021-08-06 10:06:32,779 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 10:06:32] "[37mPOST /tables/insert/sleep/predict HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 10:06:50,988 - _internal.py - _log -  * Detected change in 'C:\\Users\\tobg\\OneDrive - GFT Technologies SE\\Desktop\\PY\\get_pred\\app_local.py', reloading
+INFO - 2021-08-06 10:06:51,106 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 10:06:53,537 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 10:06:53,552 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 10:06:53,554 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 10:06:53,569 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-06 10:06:53,700 - api_utils.py - insertIntoSLEEP - Connected to SQLite
+INFO - 2021-08-06 10:06:53,723 - api_utils.py - insertIntoSLEEP - The SQLite connection is closed
+INFO - 2021-08-06 10:06:53,729 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 10:06:53] "[37mPOST /tables/insert/sleep/predict HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 10:14:59,907 - _internal.py - _log -  * Detected change in 'C:\\Users\\tobg\\OneDrive - GFT Technologies SE\\Desktop\\PY\\get_pred\\pred.py', reloading
+INFO - 2021-08-06 10:15:00,042 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 10:15:02,541 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 10:15:02,549 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 10:15:02,565 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 10:15:02,581 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-06 10:15:52,120 - _internal.py - _log -  * Detected change in 'C:\\Users\\tobg\\OneDrive - GFT Technologies SE\\Desktop\\PY\\get_pred\\app_local.py', reloading
+INFO - 2021-08-06 10:15:52,230 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 10:15:54,687 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 10:15:54,693 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 10:15:54,715 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 10:15:54,727 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-06 10:25:40,939 - _internal.py - _log -  * Detected change in 'C:\\Users\\tobg\\OneDrive - GFT Technologies SE\\Desktop\\PY\\get_pred\\api_utils.py', reloading
+INFO - 2021-08-06 10:25:41,055 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 10:25:43,496 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 10:25:43,512 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 10:25:43,512 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 10:25:43,528 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO - 2021-08-06 10:26:04,180 - api_utils.py - insertIntoGLUCOSE - Connected to SQLite
+ERROR - 2021-08-06 10:26:04,181 - api_utils.py - insertIntoGLUCOSE - UNIQUE constraint failed: GLUCOSE.ID, GLUCOSE.PERIOD
+Traceback (most recent call last):
+  File "C:\Users\tobg\OneDrive - GFT Technologies SE\Desktop\PY\get_pred\api_utils.py", line 72, in insertIntoGLUCOSE
+    cur.execute(sqlite_insert_with_param, data_tuple)
+sqlite3.IntegrityError: UNIQUE constraint failed: GLUCOSE.ID, GLUCOSE.PERIOD
+INFO - 2021-08-06 10:26:04,182 - api_utils.py - insertIntoGLUCOSE - The SQLite connection is closed
+INFO - 2021-08-06 10:26:04,182 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 10:26:04] "[37mPOST /tables/insert/glucose HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 10:27:37,829 - api_utils.py - insertIntoGLUCOSE - Connected to SQLite
+ERROR - 2021-08-06 10:27:37,830 - api_utils.py - insertIntoGLUCOSE - UNIQUE constraint failed: GLUCOSE.ID, GLUCOSE.PERIOD
+Traceback (most recent call last):
+  File "C:\Users\tobg\OneDrive - GFT Technologies SE\Desktop\PY\get_pred\api_utils.py", line 72, in insertIntoGLUCOSE
+    cur.execute(sqlite_insert_with_param, data_tuple)
+sqlite3.IntegrityError: UNIQUE constraint failed: GLUCOSE.ID, GLUCOSE.PERIOD
+INFO - 2021-08-06 10:27:37,830 - api_utils.py - insertIntoGLUCOSE - The SQLite connection is closed
+INFO - 2021-08-06 10:27:37,831 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 10:27:37] "[37mPOST /tables/insert/glucose HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 10:27:52,044 - _internal.py - _log -  * Detected change in 'C:\\Users\\tobg\\OneDrive - GFT Technologies SE\\Desktop\\PY\\get_pred\\api_utils.py', reloading
+INFO - 2021-08-06 10:27:52,153 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 10:37:40,371 - app.py - <module> - main app started
+INFO - 2021-08-06 10:37:40,393 - _internal.py - _log -  * Restarting with stat
+INFO - 2021-08-06 10:37:42,599 - app.py - <module> - main app started
+WARNING - 2021-08-06 10:37:42,615 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 10:37:42,615 - _internal.py - _log -  * Debugger PIN: 328-227-601
+INFO - 2021-08-06 10:37:42,630 - _internal.py - _log -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)

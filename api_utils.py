@@ -25,7 +25,7 @@ def insertIntoSLEEP(pid ,start ,end,quality,comment):
         cur.close()
 
     except sqlite3.Error as error:
-        logging.exception("Failed to insert into sleep table", error)
+        logging.exception(error)
     finally:
         if sqliteConnection:
             sqliteConnection.close()
@@ -49,8 +49,7 @@ def insertIntoFOOD(pid ,start ,carbs,proteins, fats,comment):
         cur.close()
 
     except sqlite3.Error as error:
-        logging.exception("Failed to insert into meal table")
-        #questa versione mi stampa l'errore nei log ma non su reqbin
+        logging.exception(error)
     finally:
         if sqliteConnection:
             sqliteConnection.close()
@@ -76,8 +75,10 @@ def insertIntoGLUCOSE(pid ,timestamp, value, comment):
         cur.close()
 
     except sqlite3.Error as error:
-        logging.exception("Connected to SQLite")("Failed to insert into glucose table", error)
         #questa versione mi fa vedere l'errore su reqbin
+        #logging.exception("failed insert glucose")("Failed to insert into glucose table", error)
+        #reqbin 200 ma errore nei log
+        logging.exception(error)
     finally:
         if sqliteConnection:
             sqliteConnection.close()
@@ -85,9 +86,9 @@ def insertIntoGLUCOSE(pid ,timestamp, value, comment):
          
     
 
-def sel_glucose():
+def sel_table(table):
     con = sqlite3.connect("main.db")
-    query = "SELECT * FROM GLUCOSE"    
+    query = "SELECT * FROM " + str(table)
     df = pd.read_sql_query(query, con)
     con.commit()
     con.close()

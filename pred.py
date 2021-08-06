@@ -28,9 +28,19 @@ def create_df_pd(pid):
     return df
 
 
+#if emp = 0 proceed with the model 
+def fast_empty_check(df):
+    """
+    df = pandas df
+    """
+    if len(df.columns) == 0: 
+        emp = 1
+    else:
+        emp = 0
+    return emp
 
 if __name__=='__main__':
     create_df_pd()
-    create_df_pd2()
+    
 
     

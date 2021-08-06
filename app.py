@@ -1,20 +1,28 @@
 import pickle
-from flask import Flask, request
+from flask import Flask, request, jsonify
 import numpy as np
 import pandas as pd
 import train
 import api_utils as ut
 import sqlite3
+import pred
+import logging
+
+logging.basicConfig(level=logging.INFO,
+                    filename='app.log', filemode='a', 
+                    format='%(levelname)s - %(asctime)s - %(filename)s - %(funcName)s - %(message)s')
+
 
 #pickle and unpickle must happen with the same version of scikit learn
-
 ml_api = Flask(__name__)
 ml_api.config["DEBUG"] = True
+logging.info("main app started")
+
 
 # una route vera, che non sia una richiesta api, ci va se no il deploy va in errore
 @ml_api.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return 'Hello, World!!'
 
 @ml_api.route('/train', methods=["GET"])
 def get_pickle():
@@ -80,13 +88,12 @@ def ins_tb_meal():
 
     pid = json_data["pid"]
     start = json_data["start"]
-    end = json_data["end"]
     carbs = json_data["carbs"]
     proteins = json_data["proteins"]
     fats = json_data["fats"]
     comment = json_data["comment"]
     
-    ut.insertIntoFOOD(pid ,start ,end,carbs,proteins, fats,comment)
+    ut.insertIntoFOOD(pid ,start ,carbs,proteins, fats,comment)
     return jsonify('finished_meal')
 
 @ml_api.route('/tables/insert/glucose', methods=['POST'])
@@ -97,43 +104,79 @@ def ins_tb_glucose():
     timestamp = json_data["timestamp"]
     value = json_data["value"]
     comment = json_data["comment"]
-    
+    print((pid ,timestamp, value, comment))
     ut.insertIntoGLUCOSE(pid ,timestamp, value, comment)
-    return jsonify('finished_glucose')
+    return jsonify('finished glucose')
 
-@ml_api.route('/db/create', methods=["GET"])
-def db_create():
-    
-    conn = sqlite3.connect('main.db')
-    return "Opened or created database successfully"
 
 @ml_api.route('/tables/createall', methods=["GET"])
 def tables_create():
-    
+    #la creazione del db avviene automaticamente se non esiste 
     conn = sqlite3.connect('main.db')
     #datetime format https://stackoverflow.com/questions/17227110/how-do-datetime-values-work-in-sqlite
     #"YYYY-MM-DD HH:MM:SS.SSS"
     conn.execute('''CREATE TABLE SLEEP
-         (ID INT PRIMARY KEY     NOT NULL,
+         (ID INTEGER     NOT NULL,
          START           TEXT    NOT NULL,
-         END            TEXT     NOT NULL,
+         FINISH            TEXT     NOT NULL,
          QUALITY        INT,
-         COMMENT         VARCHAR(150));
-         CREATE TABLE MEAL
-         (ID INT PRIMARY KEY     NOT NULL,
-         START           TEXT    ,
-         END            TEXT     ,
+         COMMENT         VARCHAR(150),
+         PRIMARY KEY ( ID, START, FINISH));''')
+    conn.execute('''CREATE TABLE MEAL
+         (ID INTEGER      NOT NULL,
+         START           TEXT    NOT NULL,
          CARBS        INT     NOT NULL,
          PROTEINS        INT,
          FATS        INT,
-         COMMENT         VARCHAR(150));
-         CREATE TABLE GLUCOSE
-         (ID INT PRIMARY KEY     NOT NULL,
-         TIMESTAMP           TEXT    NOT NULL,
+         COMMENT         VARCHAR(150),
+         PRIMARY KEY (ID, START));''')
+    conn.execute('''CREATE TABLE GLUCOSE
+         (ID INTEGER     NOT NULL,
+         PERIOD           TEXT    NOT NULL,
          VALUE            INT NOT NULL     ,
-         COMMENT         VARCHAR(150));
+         COMMENT         VARCHAR(150),
+         PRIMARY KEY (ID, PERIOD));
          ''')
     conn.close()
     return "Table created successfully"
 
+@ml_api.route("/predict", methods=['GET'])
+def predict_script():
+    df = pred.create_df_pd(1)
+    return df.to_string()
 
+@ml_api.route("/select/glucose", methods=['GET'])
+def sel_gluco_table():
+    df = ut.sel_table("GLUCOSE")
+    return df.to_string()
+
+@ml_api.route("/select/meal", methods=['GET'])
+def sel_meal_table():
+    df = ut.sel_table("MEAL")
+    return df.to_string()
+
+@ml_api.route("/select/sleep", methods=['GET'])
+def sel_sleep_table():
+    df = ut.sel_table("SLEEP")
+    return df.to_string()
+
+
+@ml_api.route('/tables/insert/sleep/predict', methods=['POST'])
+def ins_tb_sleep_predict():
+    json_data = request.get_json()
+
+    pid = json_data["pid"]
+    start = json_data["start"]
+    end = json_data["end"]
+    quality = json_data["quality"]
+    comment = json_data["comment"]
+    
+    ut.insertIntoSLEEP(pid ,start ,end,quality,comment)
+    df = pred.create_df_pd(pid)
+    return df.to_string()
+# se al momento della query per la creazione del df non ci sono 
+# in tutte le tabelle le valorizzazioni per un determinato pid 
+# il dataframe ritorna vuoto
+
+if __name__ == '__main__':
+    ml_api.run(host='127.0.0.1', port=5000)
