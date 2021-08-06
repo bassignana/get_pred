@@ -27,13 +27,7 @@ def create_df_pd(pid):
     con.close()
     return df
 
-def create_df_pd2():
-    con = sqlite3.connect("main.db")
-    query = "SELECT * FROM MEAL"    
-    df = pd.read_sql_query(query, con)
-    con.commit()
-    con.close()
-    return df
+
 
 if __name__=='__main__':
     create_df_pd()

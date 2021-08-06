@@ -1,0 +1,91 @@
+INFO - 2021-08-06 08:04:08,775 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 08:04:08,783 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 08:04:08,795 - _internal.py - _log -  * Debugger PIN: 519-912-749
+INFO - 2021-08-06 08:05:05,471 - _internal.py - _log -  * Detected change in '/Users/tommasobassignana/Desktop/get_pred/api_utils.py', reloading
+INFO - 2021-08-06 08:05:06,607 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 08:05:06,613 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 08:05:06,624 - _internal.py - _log -  * Debugger PIN: 519-912-749
+INFO - 2021-08-06 08:06:50,875 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:06:50] "[37mGET /tables/createall HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:06:53,954 - api_utils.py - insertIntoGLUCOSE - Connected to SQLite
+INFO - 2021-08-06 08:06:53,961 - api_utils.py - insertIntoGLUCOSE - Insert successful
+INFO - 2021-08-06 08:06:53,962 - api_utils.py - insertIntoGLUCOSE - The SQLite connection is closed
+INFO - 2021-08-06 08:06:53,963 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:06:53] "[37mPOST /tables/insert/glucose HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:06:55,085 - api_utils.py - insertIntoGLUCOSE - Connected to SQLite
+ERROR - 2021-08-06 08:06:55,086 - api_utils.py - insertIntoGLUCOSE - Connected to SQLite
+Traceback (most recent call last):
+  File "/Users/tommasobassignana/Desktop/get_pred/api_utils.py", line 71, in insertIntoGLUCOSE
+    cur.execute(sqlite_insert_with_param, data_tuple)
+sqlite3.IntegrityError: UNIQUE constraint failed: GLUCOSE.ID, GLUCOSE.PERIOD
+INFO - 2021-08-06 08:06:55,089 - api_utils.py - insertIntoGLUCOSE - The SQLite connection is closed
+INFO - 2021-08-06 08:06:55,109 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:06:55] "[35m[1mPOST /tables/insert/glucose HTTP/1.1[0m" 500 -
+INFO - 2021-08-06 08:07:04,331 - api_utils.py - insertIntoSLEEP - Connected to SQLite
+INFO - 2021-08-06 08:07:04,333 - api_utils.py - insertIntoSLEEP - insert successful
+INFO - 2021-08-06 08:07:04,333 - api_utils.py - insertIntoSLEEP - The SQLite connection is closed
+INFO - 2021-08-06 08:07:04,334 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:07:04] "[37mPOST /tables/insert/sleep HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:07:04,806 - api_utils.py - insertIntoSLEEP - Connected to SQLite
+INFO - 2021-08-06 08:07:04,818 - api_utils.py - insertIntoSLEEP - The SQLite connection is closed
+INFO - 2021-08-06 08:07:04,819 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:07:04] "[37mPOST /tables/insert/sleep HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:07:08,585 - api_utils.py - insertIntoFOOD - Connected to SQLite
+INFO - 2021-08-06 08:07:08,589 - api_utils.py - insertIntoFOOD - insert successful
+INFO - 2021-08-06 08:07:08,589 - api_utils.py - insertIntoFOOD - The SQLite connection is closed
+INFO - 2021-08-06 08:07:08,590 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:07:08] "[37mPOST /tables/insert/meal HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:07:08,972 - api_utils.py - insertIntoFOOD - Connected to SQLite
+INFO - 2021-08-06 08:07:08,974 - api_utils.py - insertIntoFOOD - The SQLite connection is closed
+INFO - 2021-08-06 08:07:08,975 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:07:08] "[37mPOST /tables/insert/meal HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:14:22,099 - _internal.py - _log -  * Detected change in '/Users/tommasobassignana/Desktop/get_pred/api_utils.py', reloading
+INFO - 2021-08-06 08:14:23,472 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 08:14:23,479 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 08:14:23,493 - _internal.py - _log -  * Debugger PIN: 519-912-749
+INFO - 2021-08-06 08:14:45,147 - api_utils.py - insertIntoGLUCOSE - Connected to SQLite
+INFO - 2021-08-06 08:14:45,161 - api_utils.py - insertIntoGLUCOSE - The SQLite connection is closed
+INFO - 2021-08-06 08:14:45,163 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:14:45] "[37mPOST /tables/insert/glucose HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:14:49,578 - api_utils.py - insertIntoGLUCOSE - Connected to SQLite
+INFO - 2021-08-06 08:14:49,580 - api_utils.py - insertIntoGLUCOSE - The SQLite connection is closed
+INFO - 2021-08-06 08:14:49,581 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:14:49] "[37mPOST /tables/insert/glucose HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:14:53,130 - api_utils.py - insertIntoSLEEP - Connected to SQLite
+INFO - 2021-08-06 08:14:53,131 - api_utils.py - insertIntoSLEEP - The SQLite connection is closed
+INFO - 2021-08-06 08:14:53,132 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:14:53] "[37mPOST /tables/insert/sleep HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:14:53,575 - api_utils.py - insertIntoSLEEP - Connected to SQLite
+INFO - 2021-08-06 08:14:53,578 - api_utils.py - insertIntoSLEEP - The SQLite connection is closed
+INFO - 2021-08-06 08:14:53,579 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:14:53] "[37mPOST /tables/insert/sleep HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:14:55,028 - api_utils.py - insertIntoFOOD - Connected to SQLite
+INFO - 2021-08-06 08:14:55,030 - api_utils.py - insertIntoFOOD - The SQLite connection is closed
+INFO - 2021-08-06 08:14:55,031 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:14:55] "[37mPOST /tables/insert/meal HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:14:55,295 - api_utils.py - insertIntoFOOD - Connected to SQLite
+INFO - 2021-08-06 08:14:55,297 - api_utils.py - insertIntoFOOD - The SQLite connection is closed
+INFO - 2021-08-06 08:14:55,298 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:14:55] "[37mPOST /tables/insert/meal HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:15:24,447 - _internal.py - _log -  * Detected change in '/Users/tommasobassignana/Desktop/get_pred/api_utils.py', reloading
+INFO - 2021-08-06 08:15:25,567 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 08:15:25,574 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 08:15:25,584 - _internal.py - _log -  * Debugger PIN: 519-912-749
+INFO - 2021-08-06 08:15:27,679 - api_utils.py - insertIntoGLUCOSE - Connected to SQLite
+ERROR - 2021-08-06 08:15:27,682 - api_utils.py - insertIntoGLUCOSE - Connected to SQLite
+Traceback (most recent call last):
+  File "/Users/tommasobassignana/Desktop/get_pred/api_utils.py", line 71, in insertIntoGLUCOSE
+    cur.execute(sqlite_insert_with_param, data_tuple)
+sqlite3.IntegrityError: UNIQUE constraint failed: GLUCOSE.ID, GLUCOSE.PERIOD
+INFO - 2021-08-06 08:15:27,683 - api_utils.py - insertIntoGLUCOSE - The SQLite connection is closed
+INFO - 2021-08-06 08:15:27,707 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:15:27] "[35m[1mPOST /tables/insert/glucose HTTP/1.1[0m" 500 -
+INFO - 2021-08-06 08:16:48,762 - _internal.py - _log -  * Detected change in '/Users/tommasobassignana/Desktop/get_pred/api_utils.py', reloading
+INFO - 2021-08-06 08:16:50,003 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 08:16:50,009 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 08:16:50,022 - _internal.py - _log -  * Debugger PIN: 519-912-749
+INFO - 2021-08-06 08:16:55,188 - api_utils.py - insertIntoFOOD - Connected to SQLite
+INFO - 2021-08-06 08:16:55,190 - api_utils.py - insertIntoFOOD - The SQLite connection is closed
+INFO - 2021-08-06 08:16:55,209 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:16:55] "[35m[1mPOST /tables/insert/meal HTTP/1.1[0m" 500 -
+INFO - 2021-08-06 08:17:45,470 - _internal.py - _log -  * Detected change in '/Users/tommasobassignana/Desktop/get_pred/api_utils.py', reloading
+INFO - 2021-08-06 08:17:46,559 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 08:17:46,565 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 08:17:46,577 - _internal.py - _log -  * Debugger PIN: 519-912-749
+INFO - 2021-08-06 08:17:47,220 - api_utils.py - insertIntoFOOD - Connected to SQLite
+ERROR - 2021-08-06 08:17:47,221 - api_utils.py - insertIntoFOOD - Failed to insert into meal table
+Traceback (most recent call last):
+  File "/Users/tommasobassignana/Desktop/get_pred/api_utils.py", line 45, in insertIntoFOOD
+    cur.execute(sqlite_insert_with_param, data_tuple)
+sqlite3.IntegrityError: UNIQUE constraint failed: MEAL.ID, MEAL.START
+INFO - 2021-08-06 08:17:47,222 - api_utils.py - insertIntoFOOD - The SQLite connection is closed
+INFO - 2021-08-06 08:17:47,224 - _internal.py - _log - 127.0.0.1 - - [06/Aug/2021 08:17:47] "[37mPOST /tables/insert/meal HTTP/1.1[0m" 200 -
+INFO - 2021-08-06 08:21:26,178 - _internal.py - _log -  * Detected change in '/Users/tommasobassignana/Desktop/get_pred/api_utils.py', reloading
+INFO - 2021-08-06 08:21:27,360 - app_local.py - <module> - main app started
+WARNING - 2021-08-06 08:21:27,366 - _internal.py - _log -  * Debugger is active!
+INFO - 2021-08-06 08:21:27,378 - _internal.py - _log -  * Debugger PIN: 519-912-749

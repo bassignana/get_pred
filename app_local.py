@@ -6,11 +6,18 @@ import train
 import api_utils as ut
 import sqlite3
 import pred
+import logging
+
+logging.basicConfig(level=logging.INFO,
+                    filename='app.log', filemode='a', 
+                    format='%(levelname)s - %(asctime)s - %(filename)s - %(funcName)s - %(message)s')
+
 
 #pickle and unpickle must happen with the same version of scikit learn
-
 ml_api = Flask(__name__)
 ml_api.config["DEBUG"] = True
+logging.info("main app started")
+
 
 # una route vera, che non sia una richiesta api, ci va se no il deploy va in errore
 @ml_api.route('/')
@@ -138,9 +145,9 @@ def predict_script():
     df = pred.create_df_pd(1)
     return df.to_string()
 
-@ml_api.route("/predictdue", methods=['GET'])
+@ml_api.route("/select/glucose", methods=['GET'])
 def predict_script2():
-    df = pred.create_df_pd2()
+    df = ut.sel_glucose()
     return df.to_string()
     
 
