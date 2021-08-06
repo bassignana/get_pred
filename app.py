@@ -178,5 +178,5 @@ def ins_tb_sleep_predict():
 # in tutte le tabelle le valorizzazioni per un determinato pid 
 # il dataframe ritorna vuoto
 
-if __name__ == '__main__':
+if __name__ == '__main__':#posso lasciare questo pezzo anche se faccio il deploy!
     ml_api.run(host='127.0.0.1', port=5000)
